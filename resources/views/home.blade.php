@@ -2,12 +2,12 @@
 
 @section('content')
 <div class="clearfix">
-    <h2 class="float-left">Welcome {{ Auth::user()->name }} - These are your posts</h2>
-    <a href="{{ route('posts.create') }}" class="btn btn-link float-right">Create a new post</a>
+    <h2 class="mb-5">Welcome {{ Auth::user()->name }} - These are your posts</h2>
+    <a href="{{ route('posts.create') }}" class="btn btn-secondary float-right">Create a new post</a>
 </div>
 
 @forelse ($posts as $post)
-    <div class="card m-2 shadow-sm">
+    <div class="card my-2">
         <div class="card-body">
 
             <h4 class="card-title">

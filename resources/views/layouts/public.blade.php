@@ -14,15 +14,17 @@
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&family=Open+Sans&display=swap" rel="stylesheet">
 
     <!-- Styles -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
-    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <link href="{{ asset('app.css') }}" rel="stylesheet">
 </head>
-<body>
+<body class="body__{!! str_replace('.', '-', Route::currentRouteName()) !!}">
     <div id="app">
-        <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
+        <nav class="navbar navbar-expand-md navbar-dark bg-dark">
             <div class="container">
                 <a class="navbar-brand" href="{{ url('/') }}">
                     {{ config('app.name', 'Laravel') }}
@@ -47,7 +49,7 @@
             </div>
         </nav>
 
-        <main class="py-4 mx-auto" style="max-width:960px">
+        <main class="py-4 mx-auto">
             @yield('content')
         </main>
     </div>
